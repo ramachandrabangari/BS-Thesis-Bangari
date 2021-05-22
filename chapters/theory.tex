@@ -1,0 +1,152 @@
+\section{Graphene}
+Graphene is a monolayer of carbon atoms arranged in a honeycomb lattice, that can be thought of as two interpenetrating triangular sublattices, with two nonequivalent carbon atoms.
+\begin{figure}[H]
+         \centering
+         \includegraphics[width=\textwidth]{figures/lattice.jpg}
+         \caption{Graphene Lattice and its Brillouin zone. Left: Two interpenetrating triangular lattices forming graphene honeycomb lattice. $a_1$ and $a_2$ are lattice vectors and $\delta_i, i=1,2,3$ are the nearest neighbour vectors. Right: Corresponding Brillouin zone that shows high symmetry points. The Dirac cones are located at $K$ and $K^\prime$ points. Figure adapted from \cite{Geim}}
+         \label{fig:lattice}
+\end{figure}
+The primitive lattice vectors for the lattice are given by (see fig. \ref{fig:lattice}):
+\begin{equation}
+    a_1 = \frac{a}{2}(3,\sqrt{3}), a_2 = \frac{a}{2}(3,-\sqrt{3})
+\end{equation}
+The reciprocal lattice vectors are given by (see fig. \ref{fig:lattice}):
+\begin{equation}
+    b_1 = \frac{2\pi}{3a}(1,\sqrt{3}), b_2 = \frac{2\pi}{3a}(1,-\sqrt{3})
+\end{equation}
+The wave vectors of the high symmetry points in the first Brillouin zone are given below, where $K$ and $K^{\prime}$ are two nonequivalent corners known as the Dirac points, as shown in fig. \ref{fig:lattice}.
+\begin{equation}
+    \Gamma = (0,0),K=\frac{2\pi}{3a}(1,\frac{1}{\sqrt{3}}),K^{\prime}=\frac{2\pi}{3a}(1,-\frac{1}{\sqrt{3}}),M=\frac{2\pi}{3a}(1,0)
+\end{equation}
+The electronic structure of graphene can be derived using the tight binding model, considering nearest and next nearest neighbour hopping. The Hamiltonian becomes:
+\begin{equation}
+    H= -t\sum_{<i,j>,\sigma}(a_{\sigma,i}^\dagger b_{\sigma,j}+H.c)-t^\prime(a_{\sigma,i}^\dagger a_{\sigma,j}+b_{\sigma,i}^\dagger b_{\sigma,j}+H.c.)
+\end{equation}
+where $a_{\sigma,i}$, $a_{\sigma,i}^\dagger$ and $b_{\sigma,i}$, $b_{\sigma,i}^\dagger$ are the annihilation and creation operators on site A and B, with spin $\sigma$, respectively. $t$ is the nearest neighbour hopping energy $\approx 2.7eV$ and $t^\prime$ is the next nearest neighbour hopping energy $\approx -0.2 t$. We can diagonalise the Hamiltonian and derive the electronic dispersion to be \cite{Geim}:
+\begin{equation}
+E_\pm(\boldsymbol{k})=\pm t \sqrt{f(\boldsymbol{k})+3}-t^\prime f(\boldsymbol{k}), f(\boldsymbol{k})= cos(\frac{\sqrt{3}}{2}k_y a)cos(\frac{3}{2}k_x a )+2cos(\sqrt{3}k_y a)
+\end{equation}
+
+\begin{figure}[H]
+         \centering
+         \includegraphics[width=\textwidth]{figures/dispersion.jpg}
+         \caption{Electronic dispersion of graphene. Left: Energy spectrum of the honeycomb lattice in units of $t$ for non zero $t$ and $t^\prime$. Here $t=2.7 eV$ and $t^\prime=-0.2t$. Right: Zoom in of the energy bands near one of the Dirac points. Figure adapted from \cite{Geim}}
+         \label{fig:dispersion}
+\end{figure}
+This gives symmetric band structure for holes and electrons around zero energy, if we take $t^\prime$ to be zero. But the electron-hole symmetry is broken and the upper and lower bands become asymmetric for finite next nearest neighbour hopping. In
+fig. \ref{fig:dispersion}, the full band structure of graphene is shown. A zoom in
+of the band structure close to one of the Dirac points is also shown. This dispersion can be
+obtained by expanding the full band structure, close to $\boldsymbol{K}$ or $\boldsymbol{K^\prime}$ vector, i.e., $\boldsymbol{k}=\boldsymbol{K}+\boldsymbol{q}$ $(|\boldsymbol{q}|<<\boldsymbol{K})$:
+\begin{equation}
+    E_\pm(\boldsymbol{q})=\pm v_F|\boldsymbol{q}|+ O[(q/K)^2]
+\end{equation}
+where $\boldsymbol{q}$ is the momentum measured relatively to the
+Dirac points and $v_F$ is the Fermi velocity, given by $v_F=3ta/ 2$.
+
+The above equation shows that the energy bands linearly cross at the Dirac points and hence the graphene acts as a zero band gap material with a linear dispersion. The approximation is valid for small carrier densities. From equation (2.6), the Hamiltonian near the Dirac points can be written as:
+\begin{equation}
+    H_{Dirac} =\begin{bmatrix}
+0 & q_x-i q_y \\
+q_x+i q_y & 0 
+\end{bmatrix} = v_F\boldsymbol{\sigma}.\boldsymbol{q}
+\end{equation}
+where $\sigma$ is the corresponding Pauli matrices. This is equivalent to the equation for massless chiral Dirac fermions in 2D where the speed of light has been replaced by $v_F$ and with a pseudospin spinor structure related to the graphene sublattices. Many of the interesting properties of graphene can be explained using this unique and interesting dispersion.
+
+\section{Bilayer Graphene}
+  \begin{figure}[H]
+         \centering
+         \includegraphics[width=\textwidth]{figures/bilayer_lattice.jpg}
+         \caption{Bernal stack bilayer graphene lattice with hopping terms and its Brillouin zone. Left: Two monolayer graphene in AB stacking forming bernal stack bilayer graphene lattice. $\gamma_0$, $\gamma_1$, $\gamma_3$ and $\gamma_4$ are the hopping terms. Right: Corresponding Brillouin zone that shows high symmetry points. Figure adapted from \cite{Geim}}
+         \label{fig:bilayer_lattice}
+ \end{figure}
+Bilayer graphene usually refers to AB stacking or Bernal stacking in which two layers of graphene are stacked on top of each other such that the two layers are shifted by one atomic spacing, as shown in fig. \ref{fig:bilayer_lattice}. The tight binding model gives us the energy dispersion of bilayer graphene. Considering various hopping terms - in-plane nearest neighbour hopping, $\gamma_0\approx2.7 eV$, hopping between atom $A_1$ and atom  $A_2$, $\gamma_1\approx0.4$, hopping between atom $B_1$ and atom $B_2$, $\gamma_1\approx0.3$ and hopping between atom $A_1(A_2)$ and atom $B_2(B_1)$, the tight-binding Hamiltonian becomes:
+
+\begin{align}
+\begin{split}
+    H & = -\gamma_0\sum_{<i,j>,m,\sigma}(a_{i,m,\sigma}^\dagger b_{j,m,\sigma}+H.c.)-\gamma_1 \sum_{j,\sigma}(a_{j,1,\sigma}^\dagger a_{j,2,\sigma}+H.c.) \\
+    & -\gamma_3 \sum_{j,\sigma}(b_{j,1,\sigma}^\dagger b_{j,2,\sigma}+H.c.)-\gamma_4 \sum_{j,\sigma}(a_{j,1,\sigma}^\dagger b_{j,2,\sigma}+a_{j,2,\sigma}^\dagger b_{j,1,\sigma}+H.c.)
+\end{split}
+\end{align}
+where $a_{i,m,\sigma}$($b_{j,m,\sigma}$) annhilates an electron on sublattice $A(B)$ with spin $\sigma$ on plane $m=1,2$. If we apply a perpendicular electric field to the system, an electrochemical potential $\Delta$ is added between the layers. The Hamiltonian in the $k$ space near the $K(K^\prime)$ points, ignoring the weaker hopping terms $\gamma_3$ and $\gamma_4$, can be represented as \cite{Geim}: 
+\begin{equation}
+    H_{K/K^\prime} = \begin{bmatrix}
+    -\frac{\Delta}{2} & v_Fk & 0 & 0 \\
+    v_Fk & -\frac{\Delta}{2} & \gamma_1 & 0 \\
+    0 & \gamma_1 & \frac{\Delta}{2} & v_Fk \\
+    0 & 0 & v_Fk & \frac{\Delta}{2}
+\end{bmatrix}
+\end{equation}
+The resultant electronic dispersion near the Dirac points is given by:
+\begin{equation}
+    E_\pm^2 = \frac{\Delta^2}{4}+v_F^2k^2+\frac{\gamma_1^2}{2}\pm\sqrt{\Delta^2v_F^2k^2+\gamma_1^2v_F^2k^2+\frac{\gamma_1^4}{4}}
+\end{equation}
+This equation gives rise to four solutions, hence, four bands near the $K(K^\prime)$ points, as shown in fig. \ref{fig:bilayer_dispersion}. For $\Delta=0$ and  $v_F<<\gamma_1$, the lowest two bands are given by:
+\begin{equation}
+    E\approx\frac{v_F^2k^2}{\gamma_1}
+\end{equation}
+We see that even bilayer graphene does not have a band gap when no external displacement field is applied. But unlike monolayer graphene which has a linear dispersion, bilayer graphene has a parabolic dispersion near the Dirac points, with effective mass $m^*=\frac{\gamma_1}{2v_F^2}$.
+For $\Delta\neq 0$ and $\Delta<<\gamma_0$, the lowest two bands are given by:
+\begin{equation}
+    E \approx \frac{\Delta}{2}-\frac{ \Delta v^{2}_{F} k^{2}}{\gamma_1}+\frac{v^{4}_F k^{4}}{ \gamma_1^{2} \Delta}
+\end{equation}
+In the presence of a displacement field, we see that a band gap opens up, which can be tuned by changing the applied perpendicular electric field.
+
+     \begin{figure}[H]
+         \centering
+         \includegraphics[width=\textwidth]{figures/bilayer_dispersion.jpg}
+         \caption{Electronic dispersion of bilayer graphene when $\Delta=0$ (left) and $\Delta\neq0$ (right). A band gap $\Delta_g$ opens up in the presence of an external displacement field. Figure adapted from \cite{Zhang2009}}
+         \label{fig:bilayer_dispersion}
+     \end{figure}
+
+\section{Twisted Bilayer Graphene}
+\subsection{Moire Superlattices}
+A geometric interference pattern, known as moire pattern, is formed when two dimensional crystals with a lattice mismatch or a relative twist between them are stacked on top of each other. The wavelength of the moire pattern in case two layers of graphene is given by:
+\begin{equation}
+    \lambda = \frac{(1+\delta)a}{\sqrt{2(1+\delta)(1-cos\theta)+\delta^2}}
+\end{equation}
+where $a$ is the lattice constant of graphene, $\theta$ is the twist angle between the two layers and $\delta$ is the lattice mismatch between the two layers. Moire pattern gives rise to effective superlattice potential with a periodicity different from the original lattice. We can see that the moire wavelength becomes much larger than the lattice constant for small twist angles. When $\lambda$ becomes comparable to the Fermi wavelength, the electronic structure is significantly modified. For example, aligned graphene-hBN heterostructures give rise to secondary Dirac points as a result of the moire superlattice potential.
+ \begin{figure}[H]
+        \centering
+         \includegraphics[width=\textwidth]{figures/twblg_lattice.jpg}
+         \caption{twBLG moire pattern and its mini Brillouin zone. Left:  The moiré pattern as seen in twBLG. The moiré wavelength is $\lambda=\frac{a}{2sin(\theta/2)}$. Right: The mini Brillouin zone is constructed from the difference between the two $K(K^\prime)$ wavevectors for the two layers. $K_s$,$K_s^\prime$,$M_s$ and $\Gamma_s$ denote points in the mini Brillouin zone. Figure adapted from \cite{Cao2018}}
+         \label{fig:twblg_lattice}
+\end{figure}
+
+\subsection{Continuum Model}
+The geometry of the bilayer system is characterised by a twist angle $\theta$ and a translation vector $\boldsymbol{d}$. But commensurability is determined only by the twist angle. In a commensurate structure, sliding one layer with respect to another modifies the unit cell but leaves the bilayer crystalline. So, let's consider AB stacking the aligned configuration. The positions of the carbon atoms in the two layers are then $\boldsymbol{R}$ and $\boldsymbol{R^\prime = M(\theta)(\boldsymbol{R}-\tau)+\boldsymbol{d}}$, where $\tau$ is a vector connecting the two atoms in the unit cell, and $M$ is a two dimensional rotation matrix within the graphene plane.
+
+\subsection{Flat bands in twBLG}
+Two graphene layers twisted at an angle with respect to each other gives rise to the formation of a mini Brillouin zone. The twist angle $\theta$ displaces the individual monolayer Dirac points by a wave-vector $|k_\theta|=2|K|sin(\theta/2)$, hence forming the mini BZ.
+
+There is hybridisation of the moire bands leading to gap openings at the intersection of the Dirac cones and renormalisation of the Fermi velocity due to the interlayer coupling between the two graaphene layers. A series of magic angles, $\theta=1.05 deg, 0.5 deg, ...$ have been found at which the Fermi velocity at the Dirac points vanishes that gives rise to flat moire bands with large density of states. The flat bands are formed as a result of competition between the interlayer hybridisation energy and the kinetic energy. When the hybridisation energy, $2w$, becomes comparable to the kinetic energy, $\hbar v_Fk_\theta$, the lower hybridised states are moved to zero energy leading to bands with very narrow band width.
+\begin{figure}[H]
+     \centering
+     \begin{subfigure}[b]{0.8\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{figures/twblg_hyb.jpg}
+         \caption{Illustration of the effect of interlayer hybridization for $w=0$, $2w<<\hbar v_0 k_\theta$ and $2w\approx \hbar v_0 k_\theta$, where $v_0=10^6ms^{-1}$ is the Fermi velocity of graphene. Figure adapted from \cite{Cao2018}}
+     \end{subfigure}
+     
+     \begin{subfigure}[b]{0.8\textwidth}
+         \centering
+         \includegraphics[width=0.5\textwidth]{figures/flatband.jpg}
+         \caption{The band energy E of magic-angle ($\theta=1.08deg$) TBG calculated using tight-binding method. The bands shown in blue are the flat bands. Figure adapted from \cite{Cao2018}}
+     \end{subfigure}
+\caption{Electronic band structure of twBLG}
+\end{figure}
+
+\subsection{Experimental Signatures of twBLG}
+The single particle picture breaks down, due to the presence of flat bands with large density of states near the charge neutrality point, because the Coulomb interactions exceed the kinetic energy in the system. twBLG enters various strongly correlated and topological states, when the Fermi energy is tuned within the flat bands. It has been experimentally observed to show correlated insulating states, superconductivity, quantum anomalous Hall effect and ferromagnetism.
+
+Each moire superlattice band is four-fold degenerate at low twist angles. The charge density required to fill one superlattice band is given by:
+\begin{equation}
+    n_s=\frac{4}{A}=\frac{8\theta^2}{\sqrt{3}a^2}
+\end{equation}
+where $A$ is the area of the moire unit cell. The filling factor, $v=4n/n_s$ gives the number of electrons per moire unit cell. We see from the fig. \ref{fig:twBLG} the presence of resistance peaks at full filling ($v=4$), quarter ($v=1$), half ($v=2$) and three-quarter filling ($v=3$). The insulating states at the full filling are due to the superlattice gap, i.e., it is a band insulator. But the insulating states at quarter, half and three-quarter filling are due to electronic correlations, hence termed correlated insulator. Near the correlated insulating states, the resistance goes to zero, showing the presence of superconducting states. The similarity of these superconducting states to the cuprates suggests a unconventional electronic origin to the superconductivity.
+
+ \begin{figure}[H]
+        \centering
+         \includegraphics[width=0.8\textwidth]{figures/res_phase.jpg}
+         \caption{twBLG transport signatures. Top:  Four-terminal longitudinal resistance plotted against carrier density at different perpendicular magnetic fields from 0 T (black trace) to 480 mT (red trace). Bottom:  Colour plot of longitudinal resistance against carrier density and temperature, showing different phases including metal, band insulator (BI), correlated state (CS) and superconducting state (SC). Figure adapted from \cite{Lu2019}}
+         \label{fig:twBLG}
+\end{figure}
