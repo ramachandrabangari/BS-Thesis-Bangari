@@ -114,6 +114,18 @@ where $a$ is the lattice constant of graphene, $\theta$ is the twist angle betwe
 \subsection{Continuum Model}
 The geometry of the bilayer system is characterised by a twist angle $\theta$ and a translation vector $\boldsymbol{d}$. But commensurability is determined only by the twist angle. In a commensurate structure, sliding one layer with respect to another modifies the unit cell but leaves the bilayer crystalline. So, let's consider AB stacking as the aligned configuration. The positions of the carbon atoms in the two layers are then $\boldsymbol{R}$ and $\boldsymbol{R^{\prime}} = M(\theta)(\boldsymbol{R}-\tau)+\boldsymbol{d}$, where $\tau$ is a vector connecting the two atoms in the unit cell, and $M$ is a two dimensional rotation matrix within the graphene plane.
 
+The bilayer forms a two-dimensional crystal only at a discrete set of commensurate twist angles. Bloch's theorem doesn't apply microscopically at generic twist angles and hence direct electronic structure calculations are not possible. For twist angles larger than a few degrees, except for a small set of angles that give low-order commensurate structure, the two layers are electronically isolated. As the twist angle reduces, interlayer coupling strengthens and quasiparticle velocity at Dirac point decreases. We derive a low-energy effective Hamiltonian valid for any value of $\boldsymbol{d}$ and for small twist angles, $\theta<10 deg$ \cite{Bistritzer12233}.
+
+The low-energy continuum model Hamiltonian has three terms: two single-layer Dirac-Hamiltonian terms that are associated with the isolated graphene sheets and a tunneling term that accounts for the hopping between the layers. The Dirac-Hamiltonian for a layer rotated by an angle $\theta$ with respect to a fixed coordinate system is given by \cite{Geim}:
+\begin{equation}
+    h_{\boldsymbol{k}}(\theta)=-vk \begin{bmatrix}
+        0 & e^{i(\theta_{\boldsymbol{k}}-\theta)}\\
+        e^{-i(\theta_{\boldsymbol{k}}-\theta)} & 0 
+    \end{bmatrix}
+\end{equation}
+where $\boldsymbol{k}$ is the momentum measured from the Dirac point, $v$ is the Dirac velocity, $\theta_{\boldsymbol{k}}$ is the momentum orientation relative to the x axis. Choosing the coordinate system as shown in fig., the decoupled bilayer Hamiltonian is $|1>h(\theta/2)<1|+|2>h(-\theta/2)<2|$, where $<i||i>$ projects onto layer $i$.
+
+
 \subsection{Flat bands in twBLG}
 Two graphene layers twisted at an angle with respect to each other gives rise to the formation of a mini Brillouin zone. The twist angle $\theta$ displaces the individual monolayer Dirac points by a wave-vector $|k_\theta|=2|K|sin(\theta/2)$, hence forming the mini BZ.
 
