@@ -1,0 +1,231 @@
+\label{section:m}
+\section{Sample insertion and instruments used}
+After fabrication, the sample is attached to the chip carrier (see fig. \ref{fig:carrier}). The chip carrier is then mounted onto a header connected to the top of the dip stick (see fig. \ref{fig:st}), and covered with dipper jacket. This is then dipped in either liquid $N_2$, and the instruments are connected for measurement. Low temperature and magnetic field measurements are done using cryogen-free dilution refrigerator at the lab.
+
+\begin{figure}[H]
+	\begin{subfigure}{0.45\linewidth}
+		\centering
+		\includegraphics[width=0.5\linewidth]{figures/carrier.jpg}
+		\caption{Chip carrier}
+		\label{fig:carrier}
+	\end{subfigure}
+	\qquad
+	\begin{subfigure}{0.45\linewidth}
+		\centering
+		\includegraphics[width=0.5\linewidth]{figures/sampletube.jpg}
+		\caption{Top of the dip stick}
+		\label{fig:st}
+	\end{subfigure}
+	\caption{Sample insertion.}
+\end{figure}
+The various instruments at the lab that are used in our experiments are shown in fig. \ref{fig:inst}.
+\begin{figure}[H]
+	\begin{subfigure}{0.45\linewidth}
+		\centering
+		\includegraphics[width=0.8\linewidth]{figures/dvm.jpg}
+		\caption{Digital multimeter}
+		\label{fig:dvm}
+	\end{subfigure}
+	\qquad
+	\begin{subfigure}{0.45\linewidth}
+		\centering
+		\includegraphics[width=0.8\linewidth]{figures/amp.jpg}
+		\caption{Current amplifier}
+		\label{fig:amp}
+	\end{subfigure}
+	\\
+	\begin{subfigure}{0.45\linewidth}
+		\centering
+		\includegraphics[width=0.8\linewidth]{figures/source.jpg}
+		\caption{Sourcemeter}
+		\label{fig:source}
+	\end{subfigure}
+	\qquad
+	\begin{subfigure}{0.45\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{figures/lia.jpg}
+		\caption{Lock-in amplifier}
+		\label{fig:lia}
+	\end{subfigure}
+	\\
+	\begin{subfigure}{0.45\linewidth}
+		\centering
+		\includegraphics[width=0.5\linewidth]{figures/kepco.jpg}
+		\caption{Kepco DC voltage source}
+		\label{fig:kepco}
+	\end{subfigure}
+	\caption{Instruments used at lab.}
+	\label{fig:inst}
+\end{figure}
+
+\section{Checking contacts}
+\label{section:d}
+
+The first step in any measurement is to check the contacts of the sample to make sure that everything is ok. There are possibilities of the contacts shorting, which will affect the measurement. The circuit for checking contacts is shown in fig. \ref{fig:contact}. The lock-in amplifier (LIA) provides AC voltage and is set to 1 V. The configuration is: sensitivity = 200 $\mu$V, low noise, time = 300ms, 24dB. It is connected to a voltage divider that has resistances, as shown in fig. \ref{fig:contact}: $R_1$ = 100 k$\Omega$ and $R_2$ = 10 $\Omega$. This reduces the voltage coming out by a factor of $R_2/(R_1+R_2)\approx 10^{-4}$. In our case, the output voltage is 100 $\mu$V. This voltage is sent to a resistor, which is either 5 k$\Omega$ or 10 M$\Omega$ based on the contact that needs to be checked. The resistor chosen has approximately the same resistance as the sample. twBLG contacts give resistance in k$\Omega$ range, while tunnel contacts give resistance in the order of M$\Omega$. The resistor is connected to the contact in the sample. All the other contacts in the sample are grounded. The voltage drop across the resistor is measured by connecting A and B to LIA input.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\linewidth]{figures/contact.jpg}
+	\caption{Circuit diagram for checking contacts in the sample. LIA is Lock-in amplifier that provides an AC signal of 1 V and 13 Hz. It is connected to a voltage divider, followed by a resistor which is connected to the contact that needs to be checked (other contacts are grounded). Points A and B are connected to LIA input to measure the voltage across the resistor.}
+	\label{fig:contact}
+\end{figure}
+
+The protocol to check the contacts is as follows:
+\begin{itemize}
+	\item Ground all the contacts in the sample and switch on LIA.
+	\item Measure and note the voltage drop across the resistor using LIA - $V_1$
+	\item Set LIA to zero and open the contact that needs to be checked, keeping all others grounded.
+	\item Turn on LIA. Measure and note the voltage drop across the resistor using LIA - $V_2$
+	\item If $V_2 \approx V_1/2$ the contact is good for twBLG contact. If $V_2 \approx 2V_1/3$ the contact is good for tunneling contact.
+\end{itemize}
+
+The conditions mentioned above come from considering contact resistance to be equal to the resistance of the resistor. In the case of 5 k$\Omega$, on opening contact, the voltage drops by half as now the voltage will divide equally between the resistor and the contact. In the case of 10 M$\Omega$, on opening the contact, we need to consider the resistance coming from the LIA input, which is 10 M$\Omega$. Due to this, the effective resistance between point B and ground becomes 5 M$\Omega$. So the voltage drops to 10/(10+5) of the original value.
+
+\section{Checking gate leakage}
+\label{section:e}
+Gate leakage check is also an important step before doing measurements. This step checks if the gates are good and not shorting with the stack and leading to gate leakage. The protocol for checking gate leakage is as follows:
+\begin{itemize}
+	\item Close all the contacts and connect a gate contact to the sourcemeter. The compliance is set based on the device measured. 
+	\item Slowly increase the voltage in steps of 0.1 V and observe the current reading. If the current shows overload for low voltages, then the gate is leaking. Repeat the same for negative voltages. The leakage depends on the compliance set based on the device.
+\end{itemize}
+
+If no leakage is seen, we set the limits till which we sweep the gates based on the value of the voltage at which current shows overload.
+
+\section{Transport measurement}
+\label{section:y}
+Transport measurements are usually the first set of measurements done on a sample to characterise its electronic properties. We have done four-probe measurement in our experiment. 4 probe measurement is better than two-probe, as it eliminates the contact resistances. The circuit for performing four-probe transport measurement is shown in fig. \ref{fig:trckt}. The lock-in amplifier (LIA) provides AC voltage and is set to 1 V. The configuration is: frequency = 13 Hz, low noise, time constant = 300ms. It is connected to a 100 M$\Omega$ resistor, which helps in finding the resistance across the contacts (explained later).
+
+The current is sent to the sample through the source, and the drain is grounded. One of the gates is connected to a sourcemeter for sweeping, while the other gate is set to a constant value using another sourcemeter. The voltage drop across the contacts ($V_{AB}$) is measured using LIA. We can do both normal transport and hall measurements with this method. If the two contacts chosen are on the same side of the sample, then it is normal transport measurement ($R_{XX}$), and if the two contacts chosen are on the opposite sides of the sample, then it is hall measurement ($R_{XY}$).
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\linewidth]{figures/trckt.jpg}
+	\caption{Circuit diagram for transport measurements in the sample. LIA is Lock-in amplifier that provides AC signal of 1 V and 13 Hz. It is follwed by a resistor connected to the source of the sample, whose drain is grounded. Back (top) gate (G1) is connected to a sourcemeter to control the gate voltage, while top (back) gate (G2) is set to a constant value using another sourcemeter. Voltage across two twBLG/hall contacts in the sample is measured by LIA.}
+	\label{fig:trckt}
+\end{figure}
+
+Now the resistance across the contacts (R) is calculated as follows:
+\begin{align*}
+	I = \frac{V_{LIA}}{R+ 100 M\Omega} &= \frac{V_{AB}}{R} \\
+	R \times V_{LIA} &= V_{AB} \times (R+ 100 M\Omega) \\
+	R &= \frac{V_{AB} \times 100 M\Omega}{V_{LIA}-V_{AB}}
+\end{align*}
+
+In our case, $R\approx10^8\times V_{AB}$ $\Omega$. The protocol for transport measurement is as follows:
+
+\begin{itemize}
+	\item Ground all the contacts and turn on LIA and sourcemeter (set to 0 V). Open source, gate (that is to be swept) and two contacts across which resistance needs to be measured. Set the other gate to a constant value using another sourcemeter.
+	\item Sweep the gate voltage ($V_G$) using sourcemeter, from 0 V to maximum, then maximum to minimum, followed by minimum to 0 V. Plot $V_{AB}$ vs $V_G$ during this.
+	\item Calculate resistance using the above formula and plot R vs $V_G$. Later carrier density can be calculated, and resistance can be plotted against it.
+\end{itemize}
+
+\section{Tunneling measurement}
+\label{section:z}
+Tunneling measurement is another way of exploring the electronic properties of a heterostructure. Fig. \ref{fig:tlckt} shows the circuit diagram for tunneling measurement in our device. The lock-in amplifier (LIA) provides AC voltage $V_{LIA}$ and is set to 5 V. The configuration is: frequency = 13 Hz, low noise, time constant = 300ms. This is passed through a voltage divider, similar to section \ref{section:d}, reducing the voltage by $10^{-4}$. It is then passed through a transformer connected to Kepco sourcemeter that adds a DC signal. This is then sent to tunnel contact in the sample and taken out from a hall contact. The current is then amplified by a pre-amplifier ($10^{-5}$ A/V) and sent to LIA and a digital multimeter (DVM). LIA measures the differential current $dI$, while the DVM measures DC current $I_{DC}$.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\linewidth]{figures/tlckt.jpg}
+	\caption{Circuit diagram for tunneling measurements in the sample. LIA is a Lock-in amplifier that provides an AC signal of $V_{LIA}$ = 5 V and 13 Hz. It is followed by a voltage divider connected to a transformer. DC voltage is supplied by Kepco sourcemeter that adds to the AC voltage coming from the transformer. The AC+DC voltage is supplied to the sample through a tunnel contact T. A hall contact of the sample is then connected to LIA and a digital multimeter (DVM) through a pre-amplifier.}
+	\label{fig:tlckt}
+\end{figure}
+
+The protocol for tunneling measurement is as follows:
+
+\begin{itemize}
+	\item Ground all the contacts and turn on LIA and Kepco DC source (set to 0 V). Open tunnel and twBLG contacts across which tunneling needs to be measured.
+	\item Sweep the DC voltage ($V_DC$) using Kepco DC source, from 0 V to maximum, then maximum to minimum, followed by minimum to 0 V. Record $dI$ from LIA and $I_{DC}$ from DVM.
+	\item Plot tunneling current $I_{DC}$ vs voltage $V_{DC}$ and tunneling conductivity $dI/V_{LIA}$ vs voltage $V_{DC}$.
+\end{itemize}
+
+\section{Stack 62}
+Two stacks were fabricated and measured during the course of the project, by Radhika and myself. Contact checking was done in stack 61, and during this process, the sample had electrostatic discharge, which was verified under optical microscope. Finally, stack 62 was used in our project, whose optical image is shown in fig. \ref{fig:tunnelbig} and \ref{fig:tunnel}. The device structure is as described in section \ref{section:c}. The various contacts in the device are listed below:
+\begin{itemize}
+	\item Source: 1
+	\item Drain: 16
+	\item twBLG/Hall contacts: 5, 6, 8, 18
+	\item Tunnel contacts: 3, 19
+	\item Top gate: 15
+	\item Back gate: 1, 13
+\end{itemize}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.77\linewidth]{figures/tunnelbig.jpg}
+	\caption{Optical image of stack 62 at 5x magnification. The scale on the right is 200 $\mu$m. All the contacts are numbered. S, D and TG represent source, drain and top gate, respectively. H1, H1', H2, H3 represent twBLG/hall contacts. T1 and T2 represent tunnel contacts. 1 and 13 are back gate contacts (not shown here as they are contacts with substrate directly).}
+	\label{fig:tunnelbig}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.77\linewidth]{figures/100x.jpg}
+	\caption{Optical image of stack 62 at 100x magnification. The scale on the right is 10 $\mu$m. The nomenclature is the same as in fig. \ref{fig:tunnelbig}}
+	\label{fig:tunnel}
+\end{figure}
+
+\subsection{Checking contacts and gate leakage}
+
+Contacts were checked using the protocol described in \ref{section:d}. V1 and V2 are voltage drops across the resistor with contact grounded and open respectively. The data noted is shown below:
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\linewidth]{figures/data.jpg}
+	\caption{Data for checking contacts}
+	\label{fig:data}
+\end{figure}
+
+We see that for twBLG contacts, the voltage drops by half on opening the contacts, as expected from the discussion in section \ref{section:d}. Hence, these contacts are good and can be used in our experiment. However, for tunnel contacts, on opening the contacts, the voltage again drops by half instead of the expected 2/3 of the original value. This can be explained by considering the tunnel contacts to have very high resistance, making the effective resistance between point B and ground to be almost 10 M$\Omega$. This makes the voltage drop by half across the resistor. This shows that the tunnel contacts cannot be used in our experiment, and hence we explored only the transport properties of the device.
+
+The reasons for high resistance in the tunnel contact could be due to various reasons:
+\begin{itemize}
+	\item The tunnel hBN used in the stack could be thicker than expected (2.5 nm). As the tunneling resistance increases exponentially with hBN thickness, even if the hBN is slightly thicker, it can lead to a bad tunnel contact reading. This is the most likely reason
+	\item The gold pad contacts could be discontinuous.
+	\item The gold pad contacts may not be below the twBLG region.
+\end{itemize}
+
+Gate leakage was checked using the protocol described in section \ref{section:e}. The compliance is set to 3 nA. For back gate (contact 1)(contact 13 grounded), there was no overload in current seen till 35 V on the positive side and -35 V on the negative side. For top gate (contact 15), there was no overload in current seen till -10 V on the negative side, but overload was seen at 9.7 V on the positive side. Based on this, $\pm 5$ V was set to be the sweep limit for top gate and $\pm 30$ V for back gate. 
+
+
+
+
+\subsection{Transport measurements and results}
+
+The tunnel contacts in the device were found to be unusable while checking the contacts. Nevertheless, we attempted to measure tunneling using the protocol described in section \ref{section:z}. We then performed transport measurement using the protocol described in section \ref{section:y}, by dipping the sample in liquid $N_2$ at 100 K and vacuum was created via a vacuum pump. Back gate was set at a constant value and top gate was swept between -5 V and 5V, with step size 0.01 V. This was done for three pairs of contacts - (5,6), (6,8) and (5,8) (see fig. \ref{fig:tunnel}).
+
+First, the back gate was set to 0 V, and resistance vs top gate voltage was calculated for different contact pairs. Carrier density was calculated using the formula, \begin{equation}
+n=\frac{V_G\epsilon\epsilon_0}{ed}
+\end{equation}
+where n is carrier density, $\epsilon$ is the dielectric constant of hBN (4), $\epsilon_0$ is the permittivity of free space, e is electric charge, and d is the thickness of top hBN (15 nm). Resistance vs carrier density was plotted (see fig. \ref{fig:g1}). It can be seen that V(5,6) and V(6,8) add up to give V(5,8). This is expected as they are on the same side of the sample.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\linewidth]{figures/Graph1.jpg}
+	\caption{Resistance vs carrier density for different contact pairs. Back gate is set to 0 V and top gate is sweeped between -5 V and 5 V.}
+	\label{fig:g1}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\linewidth]{figures/G2.jpg}
+	\caption{Resistance vs top gate voltage for contact pair (5,6) at different back gate voltages.}
+	\label{fig:g2}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\linewidth]{figures/G3.jpg}
+	\caption{Resistance vs top gate voltage for contact pair (6,8) at different back gate voltages.}
+	\label{fig:g5}
+\end{figure}
+
+Next, the back gate was set to different voltages, and resistance vs top gate voltage was plotted for contact pairs (5,6) (fig. \ref{fig:g2})and (6,8) (fig. \ref{fig:g5}). We can see that the resistance peak does not change much in the case of (5,6) for different back gate voltages, while it changes slightly in the case of (6,8). This suggests that the twist angle in the region between contacts 5 and 6 is small, while the twist angle between 6 and 8 could be large. This can be explained by looking at the changes to the bands on the application of a displacement field.
+
+For Bernal-stacked bilayer, resistance increases rapidly as the displacement field increases due to the gap opening at the CNP by breaking inversion symmetry. For large-angle twBLG, resistance decreases as the displacement field increases. The electronic band of large-angle twBLG can be described by two Dirac cones displaced in reciprocal space with negligibly small interlayer coupling. Thus, the weakly coupled layers are doped with an equal amount but opposite sign of carriers as the displacement field increases, making both layers less resistive. For low angle twBLG, there is electronic transport along the network of one-dimensional topological channels that surround the alternating triangular gapped domains. Under a transverse electric field, the nearly commensurate AB and BA domains are gapped out, leaving topologically protected 1D conduction channels along their boundaries. \cite{Yoo2019}
+
+Another feature that can be seen is small domes in the resistance graph away from the center, more visible on the hole side. Since the measurement is done at 100 K, we can't conclude much, but, this feature suggests a presence of correlated insulator state at the regions of the domes.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.6\linewidth]{figures/resref}
+	\caption{The dependence of the longitudinal resistance  on top and bottom gate in (a) Bernal-stacked BLG, (b) large-angle TBG (2.8°) and (c) small-angle TBG (0.47°). The insets in the top right corner show several line cuts at fixed top-gate voltages. Schematic band structures in the inset show how the band structures change as a function of the perpendicular electric displacement field, D. The schematic diagram of the triangular network of resistors in (c) represents the current paths generated along the domain boundaries obtained by gapping out AB and BA domains with transverse electric field. DB denotes the domain boundaries. Figure adapted from \cite{Yoo2019}}
+	\label{fig:resref}
+\end{figure}
